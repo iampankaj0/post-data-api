@@ -1,0 +1,232 @@
+.menu {
+    margin-right: 30px;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu .nav-logo img {
+    width: 90px;
+    height: auto;
+}
+
+.desktop-links ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.desktop-links ul li {
+    margin: 0 10px;
+}
+
+.desktop-links ul li a {
+    font-size: 18px;
+    color: #000;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 3px solid #fff;
+    padding-bottom: 5px;
+    transition: 0.4s;
+}
+
+.desktop-links ul li a:hover {
+    color: rgb(255, 174, 0);
+    border-bottom: 3px solid rgb(255, 174, 0);
+}
+
+.mobile-navbar {
+    display: none;
+}
+
+.mobile-navbar-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: max-content;
+    /* padding-top: 90px; */
+    padding-left: 15px;
+    background: blue;
+    transition: 0.5s ease;
+
+    flex-direction: column;
+    z-index: 1;
+}
+
+.mobile-navbar-links ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mobile-navbar-links ul li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.mobile-navbar-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.slide-bottom {
+    -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-bottom {
+    0% {
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-bottom {
+    0% {
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+
+@media screen and (min-width: 576px) {
+    button.open-nav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .menu {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    .desktop-links {
+        display: none;
+    }
+
+    .mobile-navbar {
+        display: flex;
+    }
+}
+
+
+
+
+
+
+
+/* slide bottom start */
+
+
+/* .slide-bottom {
+    -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  
+  @-webkit-keyframes slide-bottom {
+    0% {
+      -webkit-transform: translateY(-25%);
+              transform: translateY(-25%);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+  }
+  
+  @keyframes slide-bottom {
+    0% {
+      -webkit-transform: translateY(-25%);
+              transform: translateY(-25%);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+  }
+   */
+
+/* Slide bottom Ends */
+
+
+
+
+/* MEDIA QUERY START */
+/* 
+@media screen and (max-width: 1299px) {
+    .menu{
+        margin-right: 60px;
+        margin-left: 60px; 
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .menu{
+        margin-right: 60px;
+        margin-left: 60px; 
+    }
+}
+
+
+@media screen and (min-width: 991px) {
+    .menu .nav-logo{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .menu .desktop-links{
+        display: none;
+    }
+    .nav-mobile{
+        display: flex;
+    }
+    .menu{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    section.nav-sec{
+        padding: 10px 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .menu{
+        margin-right: 45px;
+        margin-left: 45px; 
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .menu{
+        margin-right: 35px;
+        margin-left: 35px; 
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .menu{
+        margin-right: 15px;
+        margin-left: 15px; 
+    }
+} */
