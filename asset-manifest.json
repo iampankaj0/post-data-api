@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/post-data-api/static/css/main.972feb37.css",
+    "main.js": "/post-data-api/static/js/main.fa44db71.js",
+    "static/media/starlogo.png": "/post-data-api/static/media/starlogo.ad81032640dc72a009d9.png",
+    "index.html": "/post-data-api/index.html",
+    "main.972feb37.css.map": "/post-data-api/static/css/main.972feb37.css.map",
+    "main.fa44db71.js.map": "/post-data-api/static/js/main.fa44db71.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.972feb37.css",
+    "static/js/main.fa44db71.js"
+  ]
+}
