@@ -34,47 +34,106 @@ const Button = styled.button`
 
 const Contact = () => {
   const url = "https://fakestoreapi.com/products";
+
+  // const [data, setData] = useState({
+  //   title: "",
+  //   category: "",
+  //   description: "",
+  //   image: "",
+  //   price: "",
+  // });
+  // const handle = (e) => {
+  //   const newData = { ...data };
+  //   newData[e.target.id] = e.target.value;
+  //   setData(newData);
+  //   console.log(newData);
+  // };
+  // const Submit = (e) => {
+  //   e.preventDefault();
+  //   axios.post(url, {
+  //       title: data.title,
+  //       category: data.category,
+  //       description: data.description,
+  //       image: data.image,
+  //       price: data.price,
+  //     })
+  //     .then((res) => {
+  //       console.log(res.data);
+  //     });
+  // };
+
   const [data, setData] = useState({
-    name: "",
-    school: "",
+    title: "",
+    category: "",
+    description: "",
+    image: "",
+    price: "",
   });
 
-  const handle = (e) => {
+  const handleInput = (e) => {
     const newData = { ...data };
-    newData[e.target.id] = e.target.value;
+    newData[e.target.name] = e.target.value;
     setData(newData);
     console.log(newData);
   };
 
-  const Submit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(url, {
-      name: data.name,
-      school: data.school,
-    })
-    .then(res=>{
-      console.log(res.data);
-    })
+    axios
+      .post(url, {
+        title: data.title,
+        category: data.category,
+        description: data.description,
+        image: data.image,
+        price: data.price,
+      })
+      .then((res) => console.log(res.data));
   };
 
   return (
     <MainContact>
-      <Form onSubmit={(e) => Submit(e)}>
+      <Form onSubmit={(e) => handleSubmit(e)}>
         <Input
-          id="name"
-          onChange={(e) => handle(e)}
-          value={data.name}
+          onChange={(e) => handleInput(e)}
+          value={data.title}
+          name="title"
+          id="title"
           type="text"
-          placeholder="Name"
+          placeholder="title"
         />
         <Input
-          id="school"
-          onChange={(e) => handle(e)}
-          value={data.school}
+          onChange={(e) => handleInput(e)}
+          value={data.category}
+          name="category"
+          id="category"
           type="text"
-          placeholder="School Name"
+          placeholder="category title"
         />
-        <Button>Submit data</Button>
+        <Input
+          onChange={(e) => handleInput(e)}
+          value={data.description}
+          name="description"
+          id="description"
+          type="text"
+          placeholder="description title"
+        />
+        <Input
+          onChange={(e) => handleInput(e)}
+          value={data.image}
+          name="image"
+          id="image"
+          type="file"
+          placeholder="image"
+        />
+        <Input
+          onChange={(e) => handleInput(e)}
+          value={data.price}
+          name="price"
+          id="price"
+          type="text"
+          placeholder="price"
+        />
+        <Button>Submit Data</Button>
       </Form>
     </MainContact>
   );
