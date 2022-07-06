@@ -1,0 +1,201 @@
+.user_list {
+    margin: 15px;
+}
+
+.head-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 10px;
+    background-color: rgb(180, 180, 180);
+}
+
+.head-content_child {
+    width: -webkit-fill-available;
+    display: flex;
+    justify-content: space-between;
+}
+
+.head-content h1 {
+    color: brown;
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.head-content p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.usercreate_btn {
+    color: brown;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 7px 15px;
+    border: 2px solid #d8d8d8;
+    border-radius: 7px;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.usercreate_btn:hover {
+    color: #d8d8d8;
+    background-color: #929191;
+    border: 2px solid brown;
+}
+
+.user_list .total-users-count{
+    background-color: rgb(219, 219, 219);
+    margin-top: 2px;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.user_list .total-users-count h2{
+    margin: 0;
+    color: #000;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.user_list .total-users-count h2>span{
+    color: brown;
+    font-weight: 700;
+}
+
+.user-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.one-user {
+    width: 25%;
+    min-width: 270px;
+    border: 1px solid #d8d8d8;
+    border-radius: 40px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.one-user:hover {
+    border-color: brown;
+    box-shadow: 0 0px 10px -1px brown;
+}
+
+.one-user h1 {
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.one-user h1:after {
+    content: '';
+    display: block;
+    margin: auto;
+    width: 80%;
+    border-bottom: 1px solid #000;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.one-user h2 {
+    color: #979696;
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.one-user p {
+    color: #bdbdbd;
+    font-size: 16px;
+    margin: 0;
+}
+
+.one-user .card-headers{
+    display: flex;
+    align-items: center;justify-content: space-between;
+    padding: 10px;
+}
+
+.one-user .card-headers>button{
+    background-color: red;
+    color: #fff;
+    font-weight: lighter;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+/* CREATE FORM CSS START */
+.user-form{
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
+
+.user-form form{
+    max-width: 700px;
+    min-width: 260px;
+}
+
+.user-form form input{
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 7px;
+    outline: none;
+    padding: 10px;
+    border: 1px solid #000
+}
+
+.user-form textarea{
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 7px;
+    outline: none;
+    padding: 10px;
+    border: 1px solid #000
+}
+
+.user-form form button{
+    display: block;
+    margin: 20px auto;
+    border-radius: 7px;
+    background-color: brown;
+    color: #fff;
+    font-weight: 500;
+    text-transform: capitalize;
+    border: 1px solid brown;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 400px) {
+    .head-content h1 {
+        font-size: 18px;
+    }
+
+    .usercreate_btn {
+        font-size: 16px;
+        padding: 5px;
+    }
+}

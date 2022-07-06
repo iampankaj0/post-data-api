@@ -15,7 +15,7 @@
   max-width: 290px;
 }
 
-.all-cards .card img{
+.all-cards .card .mycard-img{
   width: 100%;
 }
 
@@ -54,4 +54,29 @@
   .all-cards {
     margin: 0px;
   }
+}
+
+
+
+/* Progressive image code */
+.loading {
+  filter: blur(10px);
+  clip-path: inset(0);
+}
+.loaded {
+  filter: blur(0px);
+  transition: filter 0.5s linear;
+}
+
+.venue__thumbnail {
+  display: block;
+  margin: auto;
+  border-radius: 40px;
+  object-fit: cover;
+  pointer-events: none;
+  transition: transform .3s;
+  width: 500px;
+  min-height: 230px;
+  max-height: 230px;
+  overflow: hidden;
 }

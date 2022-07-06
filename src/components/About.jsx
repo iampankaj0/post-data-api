@@ -1,73 +1,128 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
+import "./about.css";
 
-const About = () => {
-  const [products, setProducts] = useState([{}]);
-  const [inputval, setInputval] = useState({
-    quantity: "",
-    name: "",
-    image: "",
-  });
+// GET DATA FROM LOCAL_STORAGE
+const getLocalData = () => {
+  let data = localStorage.getItem("users");
+  console.log(data);
 
-  const handleInput = (e) => {
-    const newInputval = { ...inputval };
-    newInputval[e.target.name] = e.target.value;
-    setInputval(newInputval);
-    console.log(newInputval);
+  if (data) {
+    return JSON.parse(localStorage.getItem("users"));
+  } else {
+    return [];
+  }
+};
+
+const About = (props) => {
+  const [data, setData] = useState(getLocalData());
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [clas, setClas] = useState("");
+
+  const updateName = (e) => {
+    setName(e.target.value);
+  };
+  const updateEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const updateClas = (e) => {
+    setClas(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const aboutSubmit = (e) => {
     e.preventDefault();
-    setProducts((prevProd) => [
-      ...prevProd,
-      {
-        inputval,
-      },
+    setData((prevData) => [
+      ...prevData,
+      { name: name, email: email, clas: clas },
     ]);
+
+    if (!name || !email || !clas) {
+      alert("Please Fill Out All Fields");
+    } else {
+      alert("Your Data is Added");
+    }
+
+    setName("");
+    setEmail("");
+    setClas("");
+
+    props.history.push("/company");
   };
+
+  // DELETE USER FUNCTION START
+  const deleteUser = (id) => {
+    var newData = data;
+    newData.splice(id, 1);
+    setData([...newData]);
+    alert(`ID Number ${id + 1} is deleted`);
+  };
+  // DELETE USER FUNCTION ENDS
+
+  // SET/ADD DATA IN LOCALSTORAGE:
+  useEffect(() => {
+    localStorage.setItem("users", JSON.stringify(data));
+  }, [data]);
 
   return (
     <div className="about">
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <input
-          onChange={(e) => handleInput(e)}
-          value={inputval.quantity}
-          name="quantity"
-          type="text"
-          placeholder="Product Quantity"
-        />
-        <input
-          onChange={(e) => handleInput(e)}
-          value={inputval.name}
-          name="name"
-          type="text"
-          placeholder="Product Name"
-        />
-        <input
-          onChange={(e) => handleInput(e)}
-          value={inputval.image}
-          name="image"
-          type="file"
-          placeholder="Product Image"
-        />
-        <button>Send Data</button>
-      </form>
+      <div className="form-heading">
+        <h1>Fill The Form To Know More</h1>
+      </div>
+      <div className="form-div">
+        <form onSubmit={aboutSubmit}>
+          <input
+            value={name}
+            onChange={updateName}
+            name="name"
+            type="text"
+            placeholder="Name"
+          />
+          <input
+            value={email}
+            onChange={updateEmail}
+            name="email"
+            type="email"
+            placeholder="Email"
+          />
+          <input
+            value={clas}
+            onChange={updateClas}
+            name="class"
+            type="text"
+            placeholder="Class"
+          />
+          <button>Submit</button>
+        </form>
+      </div>
 
-      <div>
-        <table className="border">
-          <tr>
-            <th>Product Quantity</th>
-            <th>Product Name</th>
-            <th>Product Image</th>
-          </tr>
-          {products.map((data, id) => {
-            return (
-              <tr key={id}>
-                <td> {data.quantity} </td>
-                <td> {data.name} </td>
-                <td> {data.image} </td>
-              </tr>
-            );
-          })}
+      <div className="data-table">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Class</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((user, id) => {
+              return (
+                <tr key={id}>
+                  <td> {id + 1}. </td>
+                  <td> {user.name} </td>
+                  <td> {user.email} </td>
+                  <td> {user.clas} </td>
+                  <td>
+                    <button onClick={() => deleteUser(id)}>Delete</button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
         </table>
       </div>
     </div>

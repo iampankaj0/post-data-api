@@ -35,33 +35,6 @@ const Button = styled.button`
 const Contact = () => {
   const url = "https://fakestoreapi.com/products";
 
-  // const [data, setData] = useState({
-  //   title: "",
-  //   category: "",
-  //   description: "",
-  //   image: "",
-  //   price: "",
-  // });
-  // const handle = (e) => {
-  //   const newData = { ...data };
-  //   newData[e.target.id] = e.target.value;
-  //   setData(newData);
-  //   console.log(newData);
-  // };
-  // const Submit = (e) => {
-  //   e.preventDefault();
-  //   axios.post(url, {
-  //       title: data.title,
-  //       category: data.category,
-  //       description: data.description,
-  //       image: data.image,
-  //       price: data.price,
-  //     })
-  //     .then((res) => {
-  //       console.log(res.data);
-  //     });
-  // };
-
   const [data, setData] = useState({
     title: "",
     category: "",

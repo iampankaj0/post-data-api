@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./Pankaj.css";
 import "./App.css";
+import placeholder from "./starlogo.png";
+import ProgressiveImg from "./progressiveImage/ProgressiveImg";
 
 const Pankaj = () => {
   const [first, setfirst] = useState([]);
@@ -24,7 +26,13 @@ const Pankaj = () => {
         const { title, image, category } = data;
         return (
           <div className="card" key={id}>
-            <img src={image} alt={title} />
+            {/* <img/> */}
+            <ProgressiveImg
+              custom_class="mycard-img"
+              src={image}
+              placeholder={placeholder}
+              alt={title}
+            />
             <h1 className="card-title">{title}</h1>
             <p> {category} </p>
           </div>

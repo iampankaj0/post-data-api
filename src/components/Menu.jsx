@@ -35,6 +35,9 @@ const Menu = () => {
             <li>
               <Link to="/more">More</Link>
             </li>
+            <li>
+              <Link to="/all-users">Users</Link>
+            </li>
           </ul>
         </div>
 
@@ -48,19 +51,34 @@ const Menu = () => {
               <MdOutlineClose onClick={() => setToggleMenu(false)} />
               <ul>
                 <li>
-                  <Link onClick={() => setToggleMenu(false)} to="/">Home</Link>
+                  <Link onClick={() => setToggleMenu(false)} to="/">
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <Link onClick={() => setToggleMenu(false)} to="/company">Company</Link>
+                  <Link onClick={() => setToggleMenu(false)} to="/company">
+                    Company
+                  </Link>
                 </li>
                 <li>
-                  <Link onClick={() => setToggleMenu(false)} to="/about">About</Link>
+                  <Link onClick={() => setToggleMenu(false)} to="/about">
+                    About
+                  </Link>
                 </li>
                 <li>
-                  <Link onClick={() => setToggleMenu(false)} to="/contact">Contact</Link>
+                  <Link onClick={() => setToggleMenu(false)} to="/contact">
+                    Contact
+                  </Link>
                 </li>
                 <li>
-                  <Link onClick={() => setToggleMenu(false)} to="/more">More</Link>
+                  <Link onClick={() => setToggleMenu(false)} to="/more">
+                    More
+                  </Link>
+                </li>
+                <li>
+                  <Link onClick={() => setToggleMenu(false)} to="/all-users">
+                    Users
+                  </Link>
                 </li>
               </ul>
             </div>
