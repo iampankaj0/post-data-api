@@ -15,7 +15,7 @@
   max-width: 290px;
 }
 
-.all-cards .card .mycard-img{
+.all-cards .card .mycard-img {
   width: 100%;
 }
 
@@ -63,6 +63,7 @@
   filter: blur(10px);
   clip-path: inset(0);
 }
+
 .loaded {
   filter: blur(0px);
   transition: filter 0.5s linear;
@@ -79,4 +80,30 @@
   min-height: 230px;
   max-height: 230px;
   overflow: hidden;
+}
+
+
+/* loader icon css */
+.all-cards .loader-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 94px);
+}
+
+.all-cards .loader-div .loader-icon {
+  font-size: 72px;
+  color: #13007d;
+  animation: icon-rotation 2s infinite linear;
+}
+
+
+@keyframes icon-rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
 }
