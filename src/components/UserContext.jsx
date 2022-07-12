@@ -6,7 +6,6 @@ export const toggleContext = createContext();
 // FETCH LOCALSTORAGE DATA
 const fetchLocalUsers = () => {
   let users = localStorage.getItem("Users");
-
   if (users) {
     return JSON.parse(localStorage.getItem("Users"));
   } else {

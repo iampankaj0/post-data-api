@@ -2,7 +2,7 @@ import ProgressiveImage from "react-progressive-graceful-image";
 
 export default function App({ src, alt, placeholder, custom_class }) {
   return (
-    // ...
+
     <ProgressiveImage src={src} placeholder={placeholder}>
       {(src, loading) => (
         <img
@@ -14,6 +14,6 @@ export default function App({ src, alt, placeholder, custom_class }) {
         />
       )}
     </ProgressiveImage>
-    // ...
+
   );
 }

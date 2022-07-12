@@ -48,7 +48,7 @@ const About = (props) => {
     setEmail("");
     setClas("");
 
-    props.history.push("/company");
+    // props.history.push("/company");
   };
 
   // DELETE USER FUNCTION START
