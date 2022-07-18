@@ -14,10 +14,9 @@ const Pankaj = () => {
     const response = await axios.get("https://fakestoreapi.com/products");
     setfirst(response.data);
     setLoader(true);
-    console.log(response.data)
-      .catch((err) => {
-        console.log("Error", err);
-      });
+    console.log(response.data).catch((err) => {
+      console.log("Error", err);
+    });
   };
 
   useEffect(() => {

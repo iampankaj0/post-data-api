@@ -14,7 +14,7 @@ const getLocalData = () => {
   }
 };
 
-const About = (props) => {
+const About = () => {
   const [data, setData] = useState(getLocalData());
 
   const [name, setName] = useState("");
@@ -33,22 +33,20 @@ const About = (props) => {
 
   const aboutSubmit = (e) => {
     e.preventDefault();
-    setData((prevData) => [
-      ...prevData,
-      { name: name, email: email, clas: clas },
-    ]);
 
     if (!name || !email || !clas) {
       alert("Please Fill Out All Fields");
     } else {
+      setData((prevData) => [
+        ...prevData,
+        { name: name, email: email, clas: clas },
+      ]);
       alert("Your Data is Added");
     }
 
     setName("");
     setEmail("");
     setClas("");
-
-    // props.history.push("/company");
   };
 
   // DELETE USER FUNCTION START

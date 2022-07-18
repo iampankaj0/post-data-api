@@ -51,7 +51,6 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
-    const { title, category, description, image, price } = data;
     e.preventDefault();
     axios
       .post(url, {
